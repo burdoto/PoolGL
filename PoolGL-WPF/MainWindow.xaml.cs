@@ -39,7 +39,7 @@ namespace PoolGL_WPF
                 }
                 catch (Exception e)
                 {
-                    var str = "Error in Game.Run()" + e;
+                    var str = "Error in Game.Run():\n" + e;
                     Console.WriteLine(str);
                     Debug.WriteLine(str);
                     Application.Current.MainWindow?.Close();
