@@ -10,14 +10,16 @@ namespace PoolGL_WPF
     {
         public PoolTable Table;
         public PlayBall PlayBall;
+        public Player Player;
         public PoolBall[] PoolBalls;
-        public override ITransform Player { get; } = new Singularity(Vector3.UnitZ * -50);
+        public override ITransform Camera { get; } = new Singularity(Vector3.UnitZ * -50);
 
         protected override bool _Load()
         {
             BaseTickTime = 2000;
             AddChild(Table = new PoolTable());
-            AddChild(PlayBall = new PlayBall(new Singularity(Vector3.UnitX*35)));
+            AddChild(PlayBall = new PlayBall(new Singularity(Vector3.UnitX*27)));
+            AddChild(Player = new Player(new Singularity(Vector3.UnitX*35)));
             return base._Load();
         }
 
