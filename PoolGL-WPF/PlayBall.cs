@@ -1,10 +1,11 @@
 ﻿using OpenGL_Util;
+using OpenGL_Util.Model;
 
 namespace PoolGL_WPF
 {
     public class PlayBall : PoolBall
     {
-        public PlayBall(ITransform transform) : base(transform, 255)
+        public PlayBall(Singularity transform) : base(transform, 255)
         {
         }
     }

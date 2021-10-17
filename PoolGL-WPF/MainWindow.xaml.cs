@@ -56,5 +56,9 @@ namespace PoolGL_WPF
 
             Game.Draw(gl, Game.Camera);
         }
+
+        private void MouseHandler(object sender, MouseEventArgs e)
+        {
+        }
     }
 }

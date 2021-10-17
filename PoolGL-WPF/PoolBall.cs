@@ -3,6 +3,7 @@ using System.Numerics;
 using System.Windows.Documents;
 using System.Windows.Media;
 using OpenGL_Util;
+using OpenGL_Util.Model;
 using OpenGL_Util.Shape2;
 using SharpGL;
 using SharpGL.Enumerations;
@@ -12,7 +13,7 @@ namespace PoolGL_WPF
 {
     public class PoolBall : AbstractGameObject
     {
-        public PoolBall(ITransform transform, byte fig) : base(transform, fig)
+        public PoolBall(Singularity transform, byte fig) : base(transform, fig)
         {
             RenderObject = new PoolBallCircle(this);
         }
