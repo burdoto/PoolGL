@@ -4,6 +4,7 @@ using System.Windows.Input;
 using OpenGL_Util;
 using OpenGL_Util.Game;
 using OpenGL_Util.Model;
+using Point = System.Windows.Point;
 
 namespace PoolGL_WPF
 {
@@ -14,6 +15,7 @@ namespace PoolGL_WPF
         public Player Player;
         public PoolBall[] PoolBalls;
         public override ITransform Camera { get; } = new Singularity(Vector3.UnitZ * -50);
+        public Vector2 MousePosition { get; internal set; }
 
         public PoolGame()
         {

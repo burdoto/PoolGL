@@ -23,7 +23,7 @@ namespace PoolGL_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public PoolGame Game;
+        public static PoolGame Game;
         
         public MainWindow()
         {
@@ -58,7 +58,8 @@ namespace PoolGL_WPF
         }
 
         private void MouseHandler(object sender, MouseEventArgs e)
-        {
+        { 
+            Game.MousePosition = e.GetPosition(this).Vector();
         }
     }
 }
