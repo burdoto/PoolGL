@@ -33,8 +33,6 @@ namespace PoolGL_WPF
 
         public bool Half => GameObject.Metadata != 255 && GameObject.Metadata / 8 % 2 > 0.98;
 
-        public override Vector3 Scale => base.Scale * 3;
-
         public Color Color => GameObject.Metadata == 255 ? White 
             : (GameObject.Metadata % 8) switch
         {

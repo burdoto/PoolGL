@@ -15,8 +15,9 @@ namespace PoolGL_WPF
 
         protected override bool _Load()
         {
+            BaseTickTime = 2000;
             AddChild(Table = new PoolTable());
-            AddChild(PlayBall = new PlayBall(new Singularity(Vector3.UnitX*-5)));
+            AddChild(PlayBall = new PlayBall(new Singularity(Vector3.UnitX*35)));
             return base._Load();
         }
 
