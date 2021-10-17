@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoolGL-WPF", "PoolGL-WPF\PoolGL-WPF.csproj", "{CC673D4D-D78B-4834-9F7A-7DC911A0A645}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenGL-Util", "..\OpenGL-Util\OpenGL-Util.csproj", "{35B06CEF-0AF9-4D44-922C-1F14F7584609}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC673D4D-D78B-4834-9F7A-7DC911A0A645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC673D4D-D78B-4834-9F7A-7DC911A0A645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC673D4D-D78B-4834-9F7A-7DC911A0A645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC673D4D-D78B-4834-9F7A-7DC911A0A645}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35B06CEF-0AF9-4D44-922C-1F14F7584609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35B06CEF-0AF9-4D44-922C-1F14F7584609}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35B06CEF-0AF9-4D44-922C-1F14F7584609}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35B06CEF-0AF9-4D44-922C-1F14F7584609}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
