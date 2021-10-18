@@ -36,7 +36,7 @@ namespace PoolGL_WPF
             var p3 = MainWindow.Game.MousePosition;
             Debug.WriteLine(p3);
             var angle = MathF.Atan2(p3.Y - p1.Y, p3.X - p2.X) - MathF.Atan2(p2.Y - p1.Y, p2.X - p1.X);
-            Transform.Rotation = Quaternion.CreateFromAxisAngle(Vector3.UnitZ, angle);
+            Transform.Rotation = Quaternion.CreateFromAxisAngle(Vector3.UnitZ, -angle);
         }
     }
 

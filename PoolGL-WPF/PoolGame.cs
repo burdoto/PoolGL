@@ -14,14 +14,14 @@ namespace PoolGL_WPF
         public PlayBall PlayBall;
         public Player Player;
         public PoolBall[] PoolBalls;
-        public override ITransform Camera { get; } = new Singularity(Vector3.UnitZ * -50);
+        public override ITransform Camera { get; } = new Singularity(Vector3.UnitZ * 50);
         public Vector2 MousePosition { get; internal set; }
 
         public PoolGame()
         {
             AddChild(Table = new PoolTable());
-            AddChild(PlayBall = new PlayBall(new Singularity(Vector3.UnitX*27)));
-            AddChild(Player = new Player(PlayBall, new Singularity(Vector3.UnitX*35)));
+            AddChild(PlayBall = new PlayBall(new Singularity(Vector3.UnitX*-27)));
+            AddChild(Player = new Player(PlayBall, new Singularity()));
         }
 
         protected override bool _Load()

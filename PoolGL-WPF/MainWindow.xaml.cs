@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SharpGL;
+using SharpGL.SceneGraph.Raytracing;
 using SharpGL.WPF;
 
 namespace PoolGL_WPF
@@ -46,6 +48,10 @@ namespace PoolGL_WPF
                 }
             });
         }
+        
+        public static OpenGL GL { get; private set; }
+
+        private void Initialize(object sender, OpenGLRoutedEventArgs args) => GL = args.OpenGL;
 
         private void Draw(object sender, OpenGLRoutedEventArgs args)
         {
@@ -53,13 +59,16 @@ namespace PoolGL_WPF
 
             gl.Clear(OpenGL.GL_COLOR_BUFFER_BIT | OpenGL.GL_DEPTH_BUFFER_BIT);
             gl.LoadIdentity();
-
             Game.Draw(gl, Game.Camera);
+            
+            gl.Flush();
         }
 
         private void MouseHandler(object sender, MouseEventArgs e)
-        { 
-            Game.MousePosition = e.GetPosition(this).Vector();
+        {
+            var pos = Mouse.GetPosition(null);
+            var proj = GL.UnProject(pos.X, pos.Y, 1);
+            Game.MousePosition = new Vector2((float)proj[0], (float)proj[1]);
         }
     }
 }
