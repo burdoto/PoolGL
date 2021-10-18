@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Numerics;
 using OpenGL_Util;
@@ -33,10 +34,8 @@ namespace PoolGL_WPF
             var p1 = PlayBall.Position;
             var p2 = p1 + Vector3.UnitY;
             var p3 = MainWindow.Game.MousePosition;
-            var a = new Vector2(p1.X - p2.X, p1.Y - p2.Y);
-            var b = new Vector2(p1.X - p3.X, p1.Y - p3.Y);
-            var u1 = a * b / (Vector2.Abs(a) * Vector2.Abs(b));
-            var angle = MathF.Acos(u1.Magnitude());
+            Debug.WriteLine(p3);
+            var angle = MathF.Atan2(p3.Y - p1.Y, p3.X - p2.X) - MathF.Atan2(p2.Y - p1.Y, p2.X - p1.X);
             Transform.Rotation = Quaternion.CreateFromAxisAngle(Vector3.UnitZ, angle);
         }
     }
