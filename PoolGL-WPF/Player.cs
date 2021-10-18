@@ -12,8 +12,8 @@ namespace PoolGL_WPF
     public class Player : AbstractGameObject
     {
         public PlayBall PlayBall { get; }
-        public static readonly Vector3 PlayerOffset = new Vector3(0f, -12f, 0f);
-        public static readonly Vector3 PlayerScale = new Vector3(0.29f, 15, 0.1f);
+        public static readonly Vector3 PlayerOffset = new Vector3(0f, -17f, 0f);
+        public static readonly Vector3 PlayerScale = new Vector3(0.13f, 15, 0.1f);
         
         public Player(PlayBall playBall, Singularity transform, short metadata = 0) : base(transform, metadata)
         {
