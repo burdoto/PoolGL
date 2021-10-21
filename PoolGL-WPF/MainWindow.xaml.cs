@@ -60,9 +60,7 @@ namespace PoolGL_WPF
             gl.Clear(OpenGL.GL_COLOR_BUFFER_BIT | OpenGL.GL_DEPTH_BUFFER_BIT);
             gl.LoadIdentity();
             Game.Draw(gl, Game.Camera);
-            
-            Game.PoolBalls[7].RenderObject.Draw(gl, Game.Camera);
-            
+
             gl.Flush();
         }
 

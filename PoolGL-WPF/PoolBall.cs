@@ -16,7 +16,7 @@ namespace PoolGL_WPF
     {
         public PoolBall(Singularity transform, byte fig) : base(transform, fig)
         {
-            RenderObject = new PoolBallCircle(this);
+            RenderObjects.Add(new PoolBallCircle(this));
             Collider = new CircleCollider(this);
             PhysicsObject = new PhysicsObject(this){Inertia = 0.93f};
         }

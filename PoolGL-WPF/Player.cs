@@ -19,7 +19,7 @@ namespace PoolGL_WPF
         public Player(PlayBall playBall, Singularity transform, short metadata = 0) : base(transform, metadata)
         {
             PlayBall = playBall;
-            RenderObject = new PlayerQueue(this);
+            RenderObjects.Add(new PlayerQueue(this));
         }
 
         public override Vector3 Position => base.Position + PlayerOffset;
