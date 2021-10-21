@@ -16,7 +16,6 @@ namespace PoolGL_WPF
         }
 
         public override Vector3 Scale => base.Scale * BaseAreaScale;
-        public override IRenderObject RenderObject { get; }
     }
 
     public sealed class PoolTableRenderObject : AbstractRenderObject

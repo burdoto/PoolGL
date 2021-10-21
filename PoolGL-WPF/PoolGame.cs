@@ -1,9 +1,11 @@
-﻿using System.Drawing;
+﻿using System.Diagnostics;
+using System.Drawing;
 using System.Numerics;
 using System.Windows.Input;
 using OpenGL_Util;
 using OpenGL_Util.Game;
 using OpenGL_Util.Model;
+using OpenGL_Util.Physics;
 using Point = System.Windows.Point;
 
 namespace PoolGL_WPF
@@ -21,6 +23,8 @@ namespace PoolGL_WPF
         {
             AddChild(Table = new PoolTable());
             AddChild(PlayBall = new PlayBall(new Singularity(Vector3.UnitX*-27)));
+            AddChild(new PoolBall(new Singularity(Vector3.UnitX*-13), 1));
+            AddChild(new PoolBall(new Singularity(Vector3.UnitY*6), 2));
             AddChild(Player = new Player(PlayBall, new Singularity()));
         }
 
@@ -38,6 +42,13 @@ namespace PoolGL_WPF
         protected override void _Disable()
         {
             base._Disable();
+        }
+
+        public void Shoot(float strength)
+        {
+            var impact = Vector3.Normalize(PlayBall.Position - new Vector3(MousePosition, 0)) * strength;
+            Debug.WriteLine("Impact force: " + impact);
+            (PlayBall.PhysicsObject as PhysicsObject)!.Velocity = impact * new Vector3(1,-1,0);
         }
     }
 }

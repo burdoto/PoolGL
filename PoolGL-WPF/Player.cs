@@ -25,8 +25,6 @@ namespace PoolGL_WPF
         public override Vector3 Position => base.Position + PlayerOffset;
         public override Vector3 Scale => base.Scale * PlayerScale;
 
-        public override IRenderObject RenderObject { get; }
-
         protected override void _Tick()
         {
             Transform.Position = PlayBall.Position;
