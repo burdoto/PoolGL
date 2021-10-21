@@ -18,7 +18,7 @@ namespace PoolGL_WPF
         {
             RenderObject = new PoolBallCircle(this);
             Collider = new CircleCollider(this);
-            PhysicsObject = new PhysicsObject(this);
+            PhysicsObject = new PhysicsObject(this){Inertia = 0.93f};
         }
     }
 
