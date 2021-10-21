@@ -33,7 +33,7 @@ namespace PoolGL_WPF
 
         private void ArrangeCluster()
         {
-            var rad = PlayBall.Scale.X * 2 + 0.01f;
+            var rad = PlayBall.Scale.X * 2 + 0.03f;
             var off = Vector3.UnitX * rad;
             int angle = 120;
             var turn1 = Quaternion.CreateFromAxisAngle(Vector3.UnitZ, angle);

@@ -7,6 +7,7 @@ namespace PoolGL_WPF
     {
         public PlayBall(Singularity transform) : base(transform, 255)
         {
+            Collider!.ActiveCollider = true;
         }
     }
 }

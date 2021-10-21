@@ -31,7 +31,7 @@ namespace PoolGL_WPF
                     FontColor = System.Drawing.Color.Black
                 });
             Collider = new CircleCollider(this);
-            PhysicsObject = new PhysicsObject(this){Inertia = 0.93f};
+            PhysicsObject = new PhysicsObject(this){Inertia = 0.93f,Mass = 200};
         }
 
         public bool Half => Metadata != 255 && Metadata / 8 % 2 > 0.98;
