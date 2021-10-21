@@ -6,6 +6,6 @@
         xmlns:ogl="clr-namespace:SharpGL.WPF;assembly=SharpGL.WPF"
         xmlns:local="clr-namespace:PoolGL_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" MouseMove="MouseHandler">
-    <ogl:OpenGLControl OpenGLInitialized="Initialize" OpenGLDraw="Draw" DrawFPS="True" />
+        Title="MainWindow" Height="450" Width="800">
+    <ogl:OpenGLControl OpenGLInitialized="Initialize" OpenGLDraw="Draw" DrawFPS="True" MouseMove="MouseHandler" />
 </Window>

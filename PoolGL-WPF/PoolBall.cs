@@ -4,6 +4,7 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using OpenGL_Util;
 using OpenGL_Util.Model;
+using OpenGL_Util.Physics;
 using OpenGL_Util.Shape2;
 using SharpGL;
 using SharpGL.Enumerations;
@@ -16,9 +17,9 @@ namespace PoolGL_WPF
         public PoolBall(Singularity transform, byte fig) : base(transform, fig)
         {
             RenderObject = new PoolBallCircle(this);
+            Collider = new CircleCollider(this);
+            PhysicsObject = new PhysicsObject(this);
         }
-
-        public override IRenderObject RenderObject { get; }
     }
 
     public class PoolBallCircle : AbstractRenderObject
