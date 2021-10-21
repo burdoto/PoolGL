@@ -61,6 +61,8 @@ namespace PoolGL_WPF
             gl.LoadIdentity();
             Game.Draw(gl, Game.Camera);
             
+            Game.PoolBalls[7].RenderObject.Draw(gl, Game.Camera);
+            
             gl.Flush();
         }
 

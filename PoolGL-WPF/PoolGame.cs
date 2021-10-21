@@ -4,6 +4,7 @@ using System.Numerics;
 using System.Windows.Input;
 using OpenGL_Util;
 using OpenGL_Util.Game;
+using OpenGL_Util.Matrix;
 using OpenGL_Util.Model;
 using OpenGL_Util.Physics;
 using Point = System.Windows.Point;
@@ -19,7 +20,7 @@ namespace PoolGL_WPF
         public override ITransform Camera { get; } = new Singularity(Vector3.UnitZ * 50);
         public Vector2 MousePosition { get; internal set; }
 
-        public PoolGame()
+        public PoolGame() : base(new ShortLongMatrix())
         {
             AddChild(Table = new PoolTable());
             AddChild(PlayBall = new PlayBall(new Singularity(Vector3.UnitX*-25)));
