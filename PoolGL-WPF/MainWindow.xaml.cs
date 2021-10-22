@@ -68,7 +68,7 @@ namespace PoolGL_WPF
         {
             var pos = Mouse.GetPosition(null);
             var proj = GL.UnProject(pos.X, pos.Y, 1);
-            Game.MousePosition = new Vector2((float)proj[0], (float)proj[1]);
+            Game.MousePosition = new Vector2((float)proj[0]/2, (float)proj[1]/2);
         }
 
         private void ClickHandler(object sender, MouseButtonEventArgs e)
