@@ -8,11 +8,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\OpenGL-Util\OpenGL-Util.csproj" />
+        <ProjectReference Include="..\..\OpenGL-Util\OpenGL-Util.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="SharpGL.WPF" Version="3.1.1" />
+        <PackageReference Include="SharpGL.WPF" Version="3.1.1"/>
     </ItemGroup>
 
 </Project>

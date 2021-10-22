@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Numerics;
-using System.Windows.Documents;
 using System.Windows.Media;
 using OpenGL_Util;
 using OpenGL_Util.Model;
 using OpenGL_Util.Physics;
 using OpenGL_Util.Shape2;
 using SharpGL;
-using SharpGL.Enumerations;
 using static System.Windows.Media.Colors;
 
 namespace PoolGL_WPF
@@ -31,12 +28,13 @@ namespace PoolGL_WPF
                     FontColor = System.Drawing.Color.Black
                 });
             Collider = new CircleCollider(this);
-            PhysicsObject = new PhysicsObject(this){Inertia = 0.93f,Mass = 200};
+            PhysicsObject = new PhysicsObject(this) { Inertia = 0.93f, Mass = 200 };
         }
 
         public bool Half => Metadata != 255 && Metadata / 8 % 2 > 0.98;
 
-        public Color Color => Metadata == 255 ? White 
+        public Color Color => Metadata == 255
+            ? White
             : (Metadata % 8) switch
             {
                 0 => Black,
@@ -54,17 +52,17 @@ namespace PoolGL_WPF
     public class PoolBallCircle : AbstractRenderObject
     {
         private readonly Circle _base;
-        
+
         public PoolBallCircle(IGameObject gameObject) : base(gameObject)
         {
-            
             _base = new Circle(gameObject);
             _base.PostBegin = gl => gl.Color(Color.Array());
         }
 
         public bool Half => GameObject.Metadata != 255 && GameObject.Metadata / 8 % 2 > 0.98;
 
-        public Color Color => GameObject.Metadata == 255 ? White 
+        public Color Color => GameObject.Metadata == 255
+            ? White
             : (GameObject.Metadata % 8) switch
             {
                 0 => Black,
@@ -78,6 +76,9 @@ namespace PoolGL_WPF
                 _ => throw new ArgumentOutOfRangeException()
             };
 
-        public override void Draw(OpenGL gl, ITransform camera) => _base.Draw(gl, camera);
+        public override void Draw(OpenGL gl, ITransform camera)
+        {
+            _base.Draw(gl, camera);
+        }
     }
 }

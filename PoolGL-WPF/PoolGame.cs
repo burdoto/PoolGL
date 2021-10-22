@@ -1,41 +1,38 @@
 ﻿using System.Diagnostics;
-using System.Drawing;
 using System.Numerics;
-using System.Windows.Input;
 using OpenGL_Util;
 using OpenGL_Util.Game;
-using OpenGL_Util.Matrix;
 using OpenGL_Util.Model;
 using OpenGL_Util.Physics;
-using Point = System.Windows.Point;
 
 namespace PoolGL_WPF
 {
     public sealed class PoolGame : GameBase
     {
-        public readonly PoolBall[] PoolBalls = new PoolBall[15];
-        public readonly PoolTable Table;
         public readonly PlayBall PlayBall;
         public readonly Player Player;
-        public override ITransform Camera { get; } = new Singularity(Vector3.UnitZ * 50);
-        public Vector2 MousePosition { get; internal set; }
+        public readonly PoolBall[] PoolBalls = new PoolBall[15];
+        public readonly PoolTable Table;
 
         public PoolGame()
         {
             AddChild(Table = new PoolTable());
-            AddChild(PlayBall = new PlayBall(new Singularity(Vector3.UnitX*-25)));
+            AddChild(PlayBall = new PlayBall(new Singularity(Vector3.UnitX * -25)));
             for (byte i = 1; i < 16; i++)
-                AddChild(PoolBalls[i-1]=new PoolBall(new Singularity(Vector3.UnitX*20), i));
+                AddChild(PoolBalls[i - 1] = new PoolBall(new Singularity(Vector3.UnitX * 20), i));
             AddChild(Player = new Player(PlayBall, new Singularity()));
 
             ArrangeCluster();
         }
 
+        public override ITransform Camera { get; } = new Singularity(Vector3.UnitZ * 50);
+        public Vector2 MousePosition { get; internal set; }
+
         private void ArrangeCluster()
         {
-            var rad = PlayBall.Scale.X * 2 + 0.03f;
+            float rad = PlayBall.Scale.X * 2 + 0.03f;
             var off = Vector3.UnitX * rad;
-            int angle = 120;
+            var angle = 120;
             var turn1 = Quaternion.CreateFromAxisAngle(Vector3.UnitZ, angle);
             var turn2 = Quaternion.CreateFromAxisAngle(Vector3.UnitZ, -angle);
             var off1 = Vector3.Transform(off, turn1);
@@ -62,7 +59,7 @@ namespace PoolGL_WPF
         {
             var impact = Vector3.Normalize(PlayBall.Position - new Vector3(MousePosition, 0)) * strength;
             Debug.WriteLine("Impact force: " + impact);
-            (PlayBall.PhysicsObject as PhysicsObject)!.Velocity = impact * new Vector3(-1,1,0);
+            (PlayBall.PhysicsObject as PhysicsObject)!.Velocity = impact * new Vector3(-1, 1, 0);
         }
     }
 }
