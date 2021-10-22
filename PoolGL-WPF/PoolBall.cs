@@ -29,7 +29,7 @@ namespace PoolGL_WPF
                     Content = fig.ToString(),
                     FontColor = System.Drawing.Color.Black
                 });
-            Collider = new CircleCollider(this);
+            Collider = new CircleCollider(this){ActiveCollider = true};
             PhysicsObject = new PhysicsObject(this) { Inertia = 0.93f, Mass = 200 };
         }
 
