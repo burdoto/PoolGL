@@ -4,7 +4,11 @@ using System.Numerics;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using OGLU;
+using OGLU.Game;
 using SharpGL;
+using SharpGL.Enumerations;
+using SharpGL.SceneGraph;
 using SharpGL.WPF;
 
 namespace PoolGL_WPF
@@ -14,11 +18,14 @@ namespace PoolGL_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow Instance;
         public static PoolGame Game;
+        public Vector2 Viewport;
+        public float Aspect;
 
         public MainWindow()
         {
-            DataContext = this;
+            DataContext = Instance = this;
             InitializeComponent();
             Game = new PoolGame();
 
@@ -59,13 +66,24 @@ namespace PoolGL_WPF
         private void MouseHandler(object sender, MouseEventArgs e)
         {
             var pos = Mouse.GetPosition(null);
-            double[] proj = GL.UnProject(pos.X, pos.Y, 1);
-            Game.MousePosition = new Vector2((float)proj[0], (float)proj[1]);
+            Game.MousePosition = UnprojectMouse2D(GL, pos.Vector());
         }
 
         private void ClickHandler(object sender, MouseButtonEventArgs e)
         {
             Game.Shoot(10);
+        }
+
+        private Vector2 UnprojectMouse2D(OpenGL gl, Vector2 mouse)
+        {
+            int[] arr = new int[4];
+            gl.GetInteger(OpenGL.GL_VIEWPORT, arr);
+            Viewport = new Vector2(arr[2], arr[3]);
+            Aspect = Viewport.X / Viewport.Y;
+            const int glH = 40; // probably wrong on other machines lmao
+            var glDim = new Vector2(glH * Aspect, glH);
+            var vec = mouse / Viewport * glDim + Game.Camera.Position.Vector2();
+            return vec;
         }
     }
 }

@@ -1,9 +1,11 @@
 ﻿using System.Diagnostics;
+using System.Drawing;
 using System.Numerics;
 using OGLU;
 using OGLU.Game;
 using OGLU.Model;
 using OGLU.Physics;
+using Rectangle = OGLU.Shape2.Rectangle;
 
 namespace PoolGL_WPF
 {
