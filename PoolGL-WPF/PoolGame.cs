@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
 using System.Numerics;
-using OpenGL_Util;
-using OpenGL_Util.Game;
-using OpenGL_Util.Model;
-using OpenGL_Util.Physics;
+using OGLU;
+using OGLU.Game;
+using OGLU.Model;
+using OGLU.Physics;
 
 namespace PoolGL_WPF
 {

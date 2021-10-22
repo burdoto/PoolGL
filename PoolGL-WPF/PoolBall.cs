@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Media;
-using OpenGL_Util;
-using OpenGL_Util.Model;
-using OpenGL_Util.Physics;
-using OpenGL_Util.Shape2;
+using OGLU;
+using OGLU.Model;
+using OGLU.Physics;
+using OGLU.Shape2;
 using SharpGL;
 using static System.Windows.Media.Colors;
 

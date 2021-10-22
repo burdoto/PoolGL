@@ -1,4 +1,4 @@
-﻿using OpenGL_Util.Model;
+﻿using OGLU.Model;
 
 namespace PoolGL_WPF
 {
