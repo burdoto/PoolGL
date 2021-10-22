@@ -22,6 +22,8 @@ namespace PoolGL_WPF
                 AddChild(PoolBalls[i - 1] = new PoolBall(new Singularity(Vector3.UnitX * 20), i));
             AddChild(Player = new Player(PlayBall, new Singularity()));
 
+            AddChild(new PoolBall(new Singularity(Vector3.UnitX * 10), 17));
+
             ArrangeCluster();
         }
 

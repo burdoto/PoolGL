@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Windows.Media;
 using OGLU;
 using OGLU.Model;
@@ -13,14 +14,15 @@ namespace PoolGL_WPF
     {
         public PoolBall(Singularity transform, byte fig) : base(transform, fig)
         {
-            RenderObjects.Add(new PoolBallCircle(this));
-            /*
+            RenderObjects.Add(new Circle(this)
+            {
+                PostBegin = gl => gl.Color(Color.Array())
+            });
             if (Half)
                 RenderObjects.Add(new Circle(this, new DeltaTransform(this){ScaleDelta = Vector3.One * 0.5f})
                 {
-                    PostBegin = gl => gl.Color(200, 200, 200)
+                    PostBegin = gl => gl.Color(White.Array())
                 });
-                */
             if (fig != 255)
                 RenderObjects.Add(new Text(this)
                 {
@@ -47,38 +49,5 @@ namespace PoolGL_WPF
                 7 => Brown,
                 _ => throw new ArgumentOutOfRangeException()
             };
-    }
-
-    public class PoolBallCircle : AbstractRenderObject
-    {
-        private readonly Circle _base;
-
-        public PoolBallCircle(IGameObject gameObject) : base(gameObject)
-        {
-            _base = new Circle(gameObject);
-            _base.PostBegin = gl => gl.Color(Color.Array());
-        }
-
-        public bool Half => GameObject.Metadata != 255 && GameObject.Metadata / 8 % 2 > 0.98;
-
-        public Color Color => GameObject.Metadata == 255
-            ? White
-            : (GameObject.Metadata % 8) switch
-            {
-                0 => Black,
-                1 => Yellow,
-                2 => CornflowerBlue,
-                3 => Red,
-                4 => Purple,
-                5 => Orange,
-                6 => SeaGreen,
-                7 => Brown,
-                _ => throw new ArgumentOutOfRangeException()
-            };
-
-        public override void Draw(OpenGL gl, ITransform camera)
-        {
-            _base.Draw(gl, camera);
-        }
     }
 }
