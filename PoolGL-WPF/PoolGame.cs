@@ -20,7 +20,7 @@ namespace PoolGL_WPF
         public override ITransform Camera { get; } = new Singularity(Vector3.UnitZ * 50);
         public Vector2 MousePosition { get; internal set; }
 
-        public PoolGame() : base(new ShortLongMatrix())
+        public PoolGame()
         {
             AddChild(Table = new PoolTable());
             AddChild(PlayBall = new PlayBall(new Singularity(Vector3.UnitX*-25)));

@@ -19,7 +19,7 @@ namespace PoolGL_WPF
         {
             RenderObjects.Add(new Cuboid(this, Color.DarkGreen));
             RenderObjects.Add(txt = new Text(this, new DeltaTransform(this){ PositionDelta = new Vector3(20, 60, 0) }));
-            Collider = new InverseCollider(new RectCollider(this));
+            Collider = new InverseCollider(new RectCollider(this, new DeltaTransform(this){ScaleDelta = BaseAreaScale.Normalize()}));
         }
 
         protected override void _Tick()
