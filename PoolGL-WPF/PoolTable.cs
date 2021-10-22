@@ -22,6 +22,24 @@ namespace PoolGL_WPF
             Collider = new InverseCollider(new RectCollider(this));
         }
 
+        protected override bool _Enable()
+        {
+            var pos1 = new Vector3(0, 50, 2);
+            var pos2 = new Vector3(50, 0, 2);
+            var vert = new Vector3(0.1f, 100f, 2);
+            var horz = new Vector3(100f, 0.1f, 2);
+            for (int i = 0; i < 100; i++)
+            {
+                RenderObjects.Add(new Rectangle(this, new Singularity(pos1, horz), Color.Bisque));
+                RenderObjects.Add(new Rectangle(this, new Singularity(pos2, vert), Color.Beige));
+                
+                pos2.X -= 10;
+                pos1.Y -= 10;
+            }
+
+            return base._Enable();
+        }
+
         public override Vector3 Scale => base.Scale * BaseAreaScale;
 
         protected override void _Tick()
