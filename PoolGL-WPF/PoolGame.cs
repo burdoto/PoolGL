@@ -58,12 +58,6 @@ namespace PoolGL_WPF
             PoolBalls[14].Transform.Position = off2 * 4 + pos;
         }
 
-        protected override bool _Load()
-        {
-            BaseTickTime = 2000;
-            return base._Load();
-        }
-
         public void Shoot(float strength)
         {
             var impact = Vector3.Normalize(PlayBall.Position - new Vector3(MousePosition, 0)) * strength;
