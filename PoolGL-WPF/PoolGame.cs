@@ -62,7 +62,7 @@ namespace PoolGL_WPF
         {
             var impact = Vector3.Normalize(PlayBall.Position - new Vector3(MousePosition, 0)) * strength;
             Debug.WriteLine("Impact force: " + impact);
-            (PlayBall.PhysicsObject as PhysicsObject)!.Velocity = impact * new Vector3(1,-1,0);
+            (PlayBall.PhysicsObject as PhysicsObject)!.Velocity = impact * new Vector3(-1,1,0);
         }
     }
 }
