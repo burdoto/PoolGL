@@ -18,9 +18,9 @@ namespace PoolGL_WPF
         {
             AddChild(Table = new PoolTable());
             AddChild(PlayBall = new PlayBall(new Singularity(Vector3.UnitX * -25)));
+            AddChild(Player = new Player(PlayBall, new Singularity()));
             for (byte i = 1; i < 16; i++)
                 AddChild(PoolBalls[i - 1] = new PoolBall(new Singularity(Vector3.UnitX * 20), i));
-            AddChild(Player = new Player(PlayBall, new Singularity()));
 
             AddChild(new PoolBall(new Singularity(Vector3.UnitX * 10), 17));
 
