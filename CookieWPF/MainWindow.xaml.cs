@@ -38,6 +38,7 @@ namespace CookieWPF
             Game = new CookieGame(this);
             Game.Stats = new CookieStats();
 
+            Game.Load(gl);
             Task.Run(Game.Run);
         }
 
