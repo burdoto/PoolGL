@@ -26,6 +26,13 @@ namespace CookieWPF
 
         public override ITransform Camera { get; } = new Singularity(Vector3.UnitZ * 50);
         public CookieStats Stats;
+        public Cookie Cookie = new Cookie(Singularity.Default);
+
+        protected override bool _Load()
+        {
+            AddChild(Cookie);
+            return base._Load();
+        }
 
         public void BuyAutoClicker() => Stats.Cookies -= (int) Math.Pow(3, Stats.AutoClickers++);
 

@@ -33,8 +33,12 @@ namespace CookieWPF
 
         private void Initialize(object sender, OpenGLRoutedEventArgs args)
         {
+            var gl = args.OpenGL;
+            
             Game = new CookieGame(this);
             Game.Stats = new CookieStats();
+
+            Task.Run(Game.Run);
         }
 
         private void Draw(object sender, OpenGLRoutedEventArgs args)

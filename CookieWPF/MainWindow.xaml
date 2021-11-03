@@ -17,8 +17,8 @@
         </Grid.ColumnDefinitions>
         <ogl:OpenGLControl DrawFPS="True" OpenGLInitialized="Initialize" OpenGLDraw="Draw" MouseDown="ClickHandler" />
         <StackPanel Grid.Column="1" Orientation="Vertical">
-            <Button Click="BuyAutoClick" />
-            <Button Click="BuyClickBoost" />
+            <Button Click="BuyAutoClick" Content="Buy AutoClicker" />
+            <Button Click="BuyClickBoost" Content="Buy ClickBoost" />
         </StackPanel>
     </Grid>
 </Window>
