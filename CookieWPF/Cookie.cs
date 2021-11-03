@@ -2,6 +2,7 @@
 using System.Numerics;
 using OGLU;
 using OGLU.Model;
+using OGLU.Physics;
 using OGLU.Shape2;
 using SharpGL;
 using SharpGL.Enumerations;
@@ -16,6 +17,7 @@ namespace CookieWPF
         public Cookie(Singularity transform, short metadata = 0) : base(transform, metadata)
         {
             RenderObjects.Add(new Texture2(this, Texture));
+            Collider = new CircleCollider(this);
         }
 
         public override Vector3 Scale => base.Scale * 5;
