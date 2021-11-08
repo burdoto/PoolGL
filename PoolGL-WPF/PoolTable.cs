@@ -1,10 +1,12 @@
-﻿using System.Drawing;
+﻿using System.Diagnostics;
+using System.Drawing;
 using System.Numerics;
 using OGLU;
 using OGLU.Game;
 using OGLU.Model;
 using OGLU.Physics;
 using OGLU.Shape2;
+using OGLU.Shape3;
 using Rectangle = OGLU.Shape2.Rectangle;
 
 namespace PoolGL_WPF
@@ -24,6 +26,13 @@ namespace PoolGL_WPF
 
         protected override bool _Enable()
         {
+            //LoadGrid();
+            return base._Enable();
+        }
+
+        [Conditional("DEBUG")]
+        private void LoadGrid()
+        {
             var pos1 = new Vector3(0, 50, 2);
             var pos2 = new Vector3(50, 0, 2);
             var vert = new Vector3(0.1f, 100f, 2);
@@ -37,7 +46,6 @@ namespace PoolGL_WPF
                 pos1.Y -= 10;
             }
 
-            return base._Enable();
         }
 
         public override Vector3 Scale => base.Scale * BaseAreaScale;
