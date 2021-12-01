@@ -4,8 +4,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoolGL-WPF", "PoolGL-WPF\Po
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OGLU", "..\OpenGL-Util\OGLU\OGLU.csproj", "{32648B2F-9CC1-480F-AA29-FA7FC4DD76A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookieWPF", "CookieWPF\CookieWPF.csproj", "{9478CFF9-0A6B-4007-ACC3-DD8E7452C7B3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,9 +18,5 @@ Global
 		{32648B2F-9CC1-480F-AA29-FA7FC4DD76A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32648B2F-9CC1-480F-AA29-FA7FC4DD76A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32648B2F-9CC1-480F-AA29-FA7FC4DD76A0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9478CFF9-0A6B-4007-ACC3-DD8E7452C7B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9478CFF9-0A6B-4007-ACC3-DD8E7452C7B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9478CFF9-0A6B-4007-ACC3-DD8E7452C7B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9478CFF9-0A6B-4007-ACC3-DD8E7452C7B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
