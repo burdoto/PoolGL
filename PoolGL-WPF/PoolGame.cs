@@ -4,6 +4,7 @@ using OGLU;
 using OGLU.Game;
 using OGLU.Model;
 using OGLU.Physics;
+using OGLU.Shape2;
 
 namespace PoolGL_WPF
 {
@@ -13,6 +14,7 @@ namespace PoolGL_WPF
         public readonly Player Player;
         public readonly PoolBall[] PoolBalls = new PoolBall[15];
         public readonly PoolTable Table;
+        private readonly MousePoint Mouse;
 
         public PoolGame()
         {
@@ -25,10 +27,26 @@ namespace PoolGL_WPF
             AddChild(new PoolBall(new Singularity(Vector3.UnitX * 10), 17));
 
             ArrangeCluster();
+
+            AddChild(Mouse = new MousePoint());
         }
 
+        private class MousePoint : AbstractGameObject
+        {
+            public MousePoint()
+            {
+                RenderObjects.Add(new Circle(this));
+            }
+        }
+        
         public override ITransform Camera { get; } = new Singularity(Vector3.UnitZ * 50);
         public Vector2 MousePosition { get; internal set; }
+
+        public override void Tick()
+        {
+            Mouse.Transform.Position = MousePosition.To3Dim(1);
+            base.Tick();
+        }
 
         private void ArrangeCluster()
         {

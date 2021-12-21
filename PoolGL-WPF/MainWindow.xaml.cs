@@ -3,8 +3,11 @@ using System.Diagnostics;
 using System.Numerics;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using OGLU;
 using SharpGL;
+using SharpGL.Enumerations;
 using SharpGL.WPF;
 
 namespace PoolGL_WPF
@@ -58,7 +61,20 @@ namespace PoolGL_WPF
 
         private void MouseHandler(object sender, MouseEventArgs e)
         {
+            const int h2d = 40;
+            
             var pos = Mouse.GetPosition(null);
+
+            int[] arr = new int[4];
+            GL.GetInteger(GetTarget.Viewport, arr);
+            int width = arr[2];
+            int height = arr[3];
+            var viewport = new Vector2(width, height);
+            float aspect = viewport.Y / viewport.X;
+            var vpn = viewport.Normalize();
+            
+            
+
             double[] proj = GL.UnProject(pos.X, pos.Y, 1);
             Game.MousePosition = new Vector2((float)proj[0], (float)proj[1]);
         }
