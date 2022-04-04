@@ -2,10 +2,10 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.Numerics;
-using OGLU;
-using OGLU.Model;
+using GameLib;
+using GameLib.Model;
 using SharpGL;
-using Rectangle = OGLU.Shape2.Rectangle;
+using Rectangle = GameLib.Shape2.Rectangle;
 
 namespace PoolGL_WPF
 {

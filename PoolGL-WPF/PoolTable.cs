@@ -1,13 +1,13 @@
 ﻿using System.Diagnostics;
 using System.Drawing;
 using System.Numerics;
-using OGLU;
-using OGLU.Game;
-using OGLU.Model;
-using OGLU.Physics;
-using OGLU.Shape2;
-using OGLU.Shape3;
-using Rectangle = OGLU.Shape2.Rectangle;
+using GameLib;
+using GameLib.Game;
+using GameLib.Model;
+using GameLib.Physics;
+using GameLib.Shape2;
+using GameLib.Shape3;
+using Rectangle = GameLib.Shape2.Rectangle;
 
 namespace PoolGL_WPF
 {

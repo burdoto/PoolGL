@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\OpenGL-Util\OGLU\OGLU.csproj"/>
+        <ProjectReference Include="..\..\OpenGL-Util\GameLib\GameLib.csproj"/>
     </ItemGroup>
 
 </Project>

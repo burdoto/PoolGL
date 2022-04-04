@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Numerics;
 using System.Windows.Media;
-using OGLU;
-using OGLU.Model;
-using OGLU.Physics;
-using OGLU.Shape2;
+using GameLib;
+using GameLib.Model;
+using GameLib.Physics;
+using GameLib.Shape2;
 using SharpGL;
 using static System.Windows.Media.Colors;
 
